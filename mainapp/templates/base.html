@@ -1,0 +1,105 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DataComp - A data science competion</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- for mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">DataComp</a>
+            </div>
+            <!-- Top Menu -->
+            <ul class="nav navbar-right top-nav">
+                <li><a href="/login">Login/Register</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Sonam Gupta <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!-- <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li> -->
+                        <!-- <li class="divider"></li> -->
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav tab">
+                    <li>
+                        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="/details#top"><i class="fa fa-fw fa-book"></i> Problem Statement</a>
+                    </li>
+                    <li>
+                        <a href="/details#rules"><i class="fa fa-fw fa-handshake-o"></i> Rules</a>
+                    </li>
+                    <li>
+                        <a href="/details#data"><i class="fa fa-fw fa-database"></i> Data</a>
+                    </li>
+                    <li>
+                        <a href="/details#submit"><i class="fa fa-fw fa-upload"></i> Submit</a>
+                    </li>
+                    <li>
+                        <a href="/leaderboard"><i class="fa fa-fw fa-trophy"></i> Leaderboard</a>
+                    </li>
+                    <li>
+                        <a href="/contact"><i class="fa fa-fw fa-phone"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
+    <script>
+$(document).ready(function () {
+$.localScroll();
+});</script>
+    
+
+</body>
+
+</html>
