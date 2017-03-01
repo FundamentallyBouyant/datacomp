@@ -40,7 +40,7 @@
                 {% if not user.is_authenticated %}
                 <li><a href="{% url 'login' %}">Login/Register</a>
                 </li>
-                {% endif %}
+                {% else %}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ user.username }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -56,6 +56,7 @@
                         </li>
                     </ul>
                 </li>
+                {% endif %}
             </ul>
             <!-- Sidebar Menu-->
             <div class="collapse navbar-collapse navbar-ex1-collapse">

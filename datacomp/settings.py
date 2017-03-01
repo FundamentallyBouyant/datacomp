@@ -25,7 +25,7 @@ SECRET_KEY = '@)6x&m^noi%(gd_lav&hiefke^i_8_-zofw_&u%^^^45_&&&+a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bouyant.pythonanywhere.com','localhost']
+ALLOWED_HOSTS = ['bouyant.pythonanywhere.com','127.0.0.1']
 
 
 EMAIL_HOST = 'smtp.sendgrid.net'
