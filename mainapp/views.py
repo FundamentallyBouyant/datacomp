@@ -1,15 +1,21 @@
 from django.shortcuts import render
+from django.contrib.auth.views import login
+from django.http import HttpResponseRedirect
 
-# Create your views here.
+def custom_login(request,**kwargs):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/')
+    else:
+        return login(request,**kwargs)
 
 def home(request):
     return render(request, 'home.html', {})
 
-def login(request):
-    return render(request, 'login.html', {})
+# def login(request):
+#     return render(request, 'login.html', {})
 
-def register(request):
-    return render(request, 'register.html', {})
+# def register(request):
+#     return render(request, 'register.html', {})
 
 def details(request):
     return render(request, 'details.html', {})

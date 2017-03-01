@@ -37,17 +37,22 @@
             </div>
             <!-- Top Menu -->
             <ul class="nav navbar-right top-nav">
-                <li><a href="/login">Login/Register</a>
+                {% if not user.is_authenticated %}
+                <li><a href="{% url 'login' %}">Login/Register</a>
                 </li>
+                {% endif %}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Sonam Gupta <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ user.username }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <!-- <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li> -->
                         <!-- <li class="divider"></li> -->
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="{% url 'auth_password_change' %}"><i class="fa fa-fw fa-key"></i> Reset Pass</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'auth_logout' %}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -58,23 +63,25 @@
                     <li>
                         <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li>
-                        <a href="/details#top"><i class="fa fa-fw fa-book"></i> Problem Statement</a>
+                        <a href="{% url 'details' %}#top"><i class="fa fa-fw fa-book"></i> Problem Statement</a>
                     </li>
                     <li>
-                        <a href="/details#rules"><i class="fa fa-fw fa-handshake-o"></i> Rules</a>
+                        <a href="{% url 'details' %}#rules"><i class="fa fa-fw fa-handshake-o"></i> Rules</a>
                     </li>
                     <li>
-                        <a href="/details#data"><i class="fa fa-fw fa-database"></i> Data</a>
+                        <a href="{% url 'details' %}#data"><i class="fa fa-fw fa-database"></i> Data</a>
                     </li>
                     <li>
-                        <a href="/details#submit"><i class="fa fa-fw fa-upload"></i> Submit</a>
+                        <a href="{% url 'details' %}#submit"><i class="fa fa-fw fa-upload"></i> Submit</a>
                     </li>
                     <li>
-                        <a href="/leaderboard"><i class="fa fa-fw fa-trophy"></i> Leaderboard</a>
+                        <a href="{% url 'leaderboard' %}"><i class="fa fa-fw fa-trophy"></i> Leaderboard</a>
                     </li>
+                    {% endif %}
                     <li>
-                        <a href="/contact"><i class="fa fa-fw fa-phone"></i> Contact</a>
+                        <a href="{% url 'contact' %}"><i class="fa fa-fw fa-phone"></i> Contact</a>
                     </li>
                 </ul>
             </div>

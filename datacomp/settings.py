@@ -25,19 +25,30 @@ SECRET_KEY = '@)6x&m^noi%(gd_lav&hiefke^i_8_-zofw_&u%^^^45_&&&+a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
+
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_USE_TLS = True
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+    'registration',
+    'mainapp',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainapp'
+    'crispy_forms',
+    
 ]
 
 MIDDLEWARE = [
@@ -120,3 +131,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#crispy css
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#registration-redux settings
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+
+
+# try:
+#     from local_settings import *
+# except ImportError:
+#     pass
