@@ -27,12 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['bouyant.pythonanywhere.com','127.0.0.1']
 
-
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = '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'
+# EMAIL_USE_TLS = True
 
 
 # Application definition
