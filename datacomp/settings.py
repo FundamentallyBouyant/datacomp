@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['bouyant.pythonanywhere.com','127.0.0.1']
 
+AUTH_USER_MODEL = 'custom_user.MyUser'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'custom_user',
     
 ]
 
